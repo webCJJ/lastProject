@@ -1,3 +1,4 @@
+
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from "vue-router";
@@ -9,8 +10,25 @@ Vue.config.debug = true;
 Vue.use(VueRouter);//全局使用Router
 Vue.use(Vueresourse);
 
+const First = {template:'<div><p>第一个子页面</p></div>'};
+import showComponent from './component/show-component.vue';
 
-new Vue({
-      el: '#app',
-      render: h => h(App)
+const router = new VueRouter({
+      mode:'history',//history 模式下 router-link会拦截点击事件，让浏览器不再重新加载页面
+      routes:[
+            {
+                  path:'/first',
+                  component:First
+            },
+            {
+                  path:'/show-component',
+                  component:showComponent
+            }
+      ]
+
 })
+
+const app = new Vue({
+          router : router,
+          render : h =>h(App)
+}).$mount("#app");

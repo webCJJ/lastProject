@@ -4,6 +4,9 @@
     <h1>{{msg}}</h1>
     <listComponent></listComponent>
     <detailComponent></detailComponent>
+    <router-link to="/first">first跳转</router-link>
+    <router-link to="/show-component">show 跳转</router-link>
+    <router-view class="view"></router-view>
   </div>
 </template>
 
@@ -12,6 +15,7 @@
 <script>
 import listComponent from './component/list-component.vue'
 import detailComponent from './component/detail-component.vue'
+import showComponent from './component/show-component.vue'
 export default {
   name: 'app',
   data(){
@@ -19,10 +23,9 @@ export default {
       msg: 'hello Vue'
     }
   },
-    components:{listComponent,detailComponent}
+    components:{listComponent,detailComponent,showComponent}
 }
 </script>
-
 <style lang="scss">
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
