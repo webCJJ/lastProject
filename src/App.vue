@@ -6,6 +6,7 @@
     <detailComponent></detailComponent>
     <router-link to="/first">first跳转</router-link>
     <router-link to="/show-component">show 跳转</router-link>
+      <router-link to="/params-component/34/1994的春天">params</router-link>
     <router-view class="view"></router-view>
   </div>
 </template>
@@ -16,6 +17,8 @@
 import listComponent from './component/list-component.vue'
 import detailComponent from './component/detail-component.vue'
 import showComponent from './component/show-component.vue'
+import params from './component/params-component.vue'
+
 export default {
   name: 'app',
   data(){
@@ -23,7 +26,7 @@ export default {
       msg: 'hello Vue'
     }
   },
-    components:{listComponent,detailComponent,showComponent}
+    components:{listComponent,detailComponent,showComponent,params}
 }
 </script>
 <style lang="scss">
